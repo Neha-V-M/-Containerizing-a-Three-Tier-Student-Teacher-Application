@@ -802,9 +802,7 @@ This project is intended to be extended as part of a broader Cloud/DevOps learni
 
 ## 📸 Screenshots
 
-> Create a `screenshots/` directory in the repository root and add the images below — they map directly to the steps documented above, so a reviewer can follow the project end-to-end without running it themselves.
-
-| # | Screenshot | What it should show |
+| # | Screenshot | Definition |
 |---|---|---|
 | 1 | `screenshots/docker-images.png` | `docker images` output — all three images built with their sizes (before the multi-stage rewrite) |
 | 2 | `screenshots/docker-images-multistage.png` | `docker images` output — all three images built with their sizes (after the multi-stage rewrite) |
