@@ -444,7 +444,7 @@ CMD ["nginx", "-g", "daemon off;"]
 | `EXPOSE 80` | nginx serves on port 80 by default (replacing the Node app's port 3000) |
 | `CMD ["nginx", "-g", "daemon off;"]` | Starts nginx in the foreground so the container keeps running as expected |
 
-**Result: 594 MB → 49 MB — roughly a 90% reduction.** This level of reduction won't always be achievable for every project, but pursuing it as far as reasonably possible pays off in both image security and faster container startup times.
+**Result: 212 MB → 29.5 MB** This level of reduction won't always be achievable for every project, but pursuing it as far as reasonably possible pays off in both image security and faster container startup times.
 
 ### Backend — Multi-Stage Rewrite With Security Hardening
 
@@ -480,7 +480,7 @@ EXPOSE 3500
 CMD ["node", "server.js"]
 ```
 
-**Result: 891 MB → 152 MB — roughly a 70–80% reduction**, alongside the added non-root security improvement.
+**Result: 363 MB → 51.6 MB**, alongside the added non-root security improvement.
 
 > Left as an open exercise: whether/how the MySQL (database) Dockerfile could similarly be reduced in size.
 
@@ -632,11 +632,10 @@ docker compose up --build
 
 ## 📦 Image Size Comparison
 
-| Image | Manual Dockerfile Build (Original) | After Multi-Stage Optimization | Final (via Compose, pinned MySQL version) |
+| Image | Manual Dockerfile Build (Original) | After Multi-Stage Optimization | 
 |---|---|---|---|
-| Frontend | 594 MB | 49 MB | 49 MB |
-| Backend | 891 MB | 152 MB | 152 MB |
-| MySQL | 953 MB (`latest`) | — *(left as an open exercise)* | 608 MB (`8.0.40` — smaller mainly because of the version change, not any Compose-specific optimization) |
+| Frontend | 212 MB | 29.5 MB | 
+| Backend | 363 MB | 51.6 MB | 
 
 ---
 
@@ -802,7 +801,6 @@ This project is intended to be extended as part of a broader Cloud/DevOps learni
 - [ ] HTTPS/TLS
 - [ ] Production database configuration with a dedicated (non-root) DB user
 - [ ] External secrets management
-- [ ] Reduce the MySQL image size (open exercise — not yet solved in this project)
 
 ---
 
