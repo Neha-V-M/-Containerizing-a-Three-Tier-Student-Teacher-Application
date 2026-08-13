@@ -798,21 +798,18 @@ This project is intended to be extended as part of a broader Cloud/DevOps learni
 - [ ] Production database configuration with a dedicated (non-root) DB user
 - [ ] External secrets management
 
----
-
-## 📸 Screenshots
-
+---## 📸 Screenshots
 | # | Screenshot | Definition |
 |---|---|---|
-| 1 | screenshots/docker-images.png | `docker images` output — all three images built with their sizes (before the multi-stage rewrite) |
-| 2 | screenshots/docker-images-multistage.png | `docker images` output — all three images built with their sizes (after the multi-stage rewrite) |
-| 3 | screenshots/docker-ps-manual.png | `docker ps` showing `mysql-container`, `backend-container`, `frontend-container` all running from the manual workflow |
-| 4 | screenshots/homepage.png | Application homepage with Home / Student / Teacher navigation |
-| 5 | screenshots/student-page.png | Student page with an added record (name, roll number, creation timestamp) |
-| 6 | screenshots/backend-response.png | Browser at `localhost:3500` showing the raw backend JSON response with student/teacher data, confirming frontend ↔ backend ↔ database wiring |
-| 7 | screenshots/compose-up-success1.png | `docker compose up --build` completing successfully with all three services started |
-| 8 | screenshots/compose-up-success2.png | `docker compose up --build` completing successfully with all three services started |
-| 9 | screenshots/docker-volume&network-ls.png | `docker volume ls` and `docker network ls` showing both the manually created volume and the new Compose-managed volume & manually created network and the new Compose-managed network |
+| 1 | ![docker images before](screenshots/docker-images.png) | `docker images` output — all three images built with their sizes (before the multi-stage rewrite) |
+| 2 | ![docker images after](screenshots/docker-images-multistage.png) | `docker images` output — all three images built with their sizes (after the multi-stage rewrite) |
+| 3 | ![docker ps manual](screenshots/docker-ps-manual.png) | `docker ps` showing `mysql-container`, `backend-container`, `frontend-container` all running from the manual workflow |
+| 4 | ![homepage](screenshots/homepage.png) | Application homepage with Home / Student / Teacher navigation |
+| 5 | ![student page](screenshots/student-page.png) | Student page with an added record (name, roll number, creation timestamp) |
+| 6 | ![backend response](screenshots/backend-response.png) | Browser at `localhost:3500` showing the raw backend JSON response with student/teacher data, confirming frontend ↔ backend ↔ database wiring |
+| 7 | ![compose up success 1](screenshots/compose-up-success1.png) | `docker compose up --build` completing successfully with all three services started |
+| 8 | ![compose up success 2](screenshots/compose-up-success2.png) | `docker compose up --build` completing successfully with all three services started |
+| 9 | ![docker volume and network ls](screenshots/docker-volume-network-ls.png) | `docker volume ls` and `docker network ls` showing both the manually created volume and the new Compose-managed volume & manually created network and the new Compose-managed network |
 
 ---
 
