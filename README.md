@@ -812,7 +812,7 @@ This project is intended to be extended as part of a broader Cloud/DevOps learni
 | 6 | `screenshots/backend-response.png` | Browser at `localhost:3500` showing the raw backend JSON response with student/teacher data, confirming frontend ↔ backend ↔ database wiring |
 | 7 | `screenshots/compose-up-success1.png` | `docker compose up --build` completing successfully with all three services started |
 | 8 | `screenshots/compose-up-success2.png` | `docker compose up --build` completing successfully with all three services started |
-| 9 | `screenshots/docker-volume&network-ls.png` | `docker volume ls` and network ls` showing both the manually created volume and the new Compose-managed volume & manually created network and the new Compose-managed network |
+| 9 | `screenshots/docker-volume&network-ls.png` | `docker volume ls` and `docker network ls` showing both the manually created volume and the new Compose-managed volume & manually created network and the new Compose-managed network |
 
 ---
 
