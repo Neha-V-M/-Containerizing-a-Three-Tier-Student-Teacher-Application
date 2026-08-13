@@ -482,8 +482,6 @@ CMD ["node", "server.js"]
 
 **Result: 363 MB → 51.6 MB**, alongside the added non-root security improvement.
 
-> Left as an open exercise: whether/how the MySQL (database) Dockerfile could similarly be reduced in size.
-
 ---
 
 ## 🔍 npm install vs npm ci
@@ -629,13 +627,11 @@ docker compose up --build
 - Final `docker ps` confirmed all three containers running, with the database explicitly showing a **"healthy"** status — confirming the healthcheck configuration was working correctly end to end.
 
 ---
-
 ## 📦 Image Size Comparison
-
-| Image | Manual Dockerfile Build (Original) | After Multi-Stage Optimization | 
-|---|---|---|---|
-| Frontend | 212 MB | 29.5 MB | 
-| Backend | 363 MB | 51.6 MB | 
+| Image | Manual Dockerfile Build (Original) | After Multi-Stage Optimization |
+|---|---|---|
+| Frontend | 212 MB | 29.5 MB |
+| Backend | 363 MB | 51.6 MB |
 
 ---
 
@@ -810,20 +806,15 @@ This project is intended to be extended as part of a broader Cloud/DevOps learni
 
 | # | Screenshot | What it should show |
 |---|---|---|
-| 1 | `screenshots/docker-images.png` | `docker images` output — all three images built with their sizes (useful before/after the multi-stage rewrite) |
-| 2 | `screenshots/docker-ps-manual.png` | `docker ps` showing `mysql-container`, `backend-container`, `frontend-container` all running from the manual workflow |
-| 3 | `screenshots/homepage.png` | Application homepage with Home / Student / Teacher navigation |
-| 4 | `screenshots/student-page.png` | Student page with an added record (name, roll number, creation timestamp) |
-| 5 | `screenshots/teacher-page.png` | Teacher page with an added record |
+| 1 | `screenshots/docker-images.png` | `docker images` output — all three images built with their sizes (before the multi-stage rewrite) |
+| 2 | `screenshots/docker-images-multistage.png` | `docker images` output — all three images built with their sizes (after the multi-stage rewrite) |
+| 3 | `screenshots/docker-ps-manual.png` | `docker ps` showing `mysql-container`, `backend-container`, `frontend-container` all running from the manual workflow |
+| 4 | `screenshots/homepage.png` | Application homepage with Home / Student / Teacher navigation |
+| 5 | `screenshots/student-page.png` | Student page with an added record (name, roll number, creation timestamp) |
 | 6 | `screenshots/backend-response.png` | Browser at `localhost:3500` showing the raw backend JSON response with student/teacher data, confirming frontend ↔ backend ↔ database wiring |
-| 7 | `screenshots/persistence-bug.png` | Terminal showing the `"failed to fetch students"` error after recreating the DB container under a mismatched name |
-| 8 | `screenshots/persistence-fixed.png` | Frontend showing all previous data restored after recreating `mysql-container` with the correct name and the same volume |
-| 9 | `screenshots/compose-restart-policy-error.png` | Terminal showing the `"Invalid restart policy"` Compose error |
-| 10 | `screenshots/compose-unhealthy-db.png` | Terminal/`docker ps` showing the database container as `unhealthy` before pinning the MySQL version |
-| 11 | `screenshots/compose-up-success.png` | `docker compose up --build` completing successfully with all three services started |
-| 12 | `screenshots/compose-healthy.png` | Final `docker ps` showing the database container status as `healthy` |
-| 13 | `screenshots/docker-volume-ls.png` | `docker volume ls` showing both the manually created volume and the new Compose-managed volume |
-| 14 | `screenshots/docker-network-ls.png` | `docker network ls` showing both the manually created network and the new Compose-managed network |
+| 7 | `screenshots/compose-up-success1.png` | `docker compose up --build` completing successfully with all three services started |
+| 8 | `screenshots/compose-up-success2.png` | `docker compose up --build` completing successfully with all three services started |
+| 9 | `screenshots/docker-volume&network-ls.png` | `docker volume ls` and network ls` showing both the manually created volume and the new Compose-managed volume & manually created network and the new Compose-managed network |
 
 ---
 
