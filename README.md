@@ -1,0 +1,2 @@
+# -Containerizing-a-Three-Tier-Student-Teacher-Application
+A hands-on Docker project demonstrating how to containerize and run a three-tier web application consisting of a React frontend, Node.js backend, and MySQL database.  The project was initially run using individual Dockerfiles and manually created containers, then improved using multi-stage Docker builds and finally automated using Docker Compose
